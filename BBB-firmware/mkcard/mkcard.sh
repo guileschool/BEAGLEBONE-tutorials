@@ -563,8 +563,8 @@ CYLINDERS=`echo $SIZE/255/63/512 | bc`
 echo CYLINDERS - $CYLINDERS
 
 sfdisk -D -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
-,90,0x0C,*
-91,,,-
+,960,0x0C,*
+961,,,-
 EOF
 
 cat << EOM
@@ -725,8 +725,9 @@ if [ $FILEPATHOPTION -eq 1 ] ; then
 	MLO=`ls $BOOTFILEPATH | grep MLO | awk {'print $1'}`
 	KERNELIMAGE=`ls $BOOTFILEPATH | grep [uz]Image | awk {'print $1'}`
 	BOOTIMG=`ls $BOOTFILEPATH | grep u-boot | grep .img | awk {'print $1'}`
+	APPBIN=`ls $BOOTFILEPATH | grep rtosdemo | grep .bin | awk {'print $1'}`
 	BOOTBIN=`ls $BOOTFILEPATH | grep u-boot | grep .bin | awk {'print $1'}`
-	BOOTUENV=`ls $BOOTFILEPATH | grep uEnv.txt | awk {'print $1'}`
+	BOOTUENV=`ls $BOOTFILEPATH | grep uEnv | awk {'print $1'}`
 	#rootfs
 	ROOTFILEPARTH="$PARSEPATH"
 	#ROOTFSTAR=`ls  $ROOTFILEPARTH | grep tisdk-rootfs | awk {'print $1'}`
@@ -948,8 +949,9 @@ EOM
 		BOOTFILEPATH=$BOOTUSERFILEPATH
 		MLO=`ls $BOOTFILEPATH | grep MLO | awk {'print $1'}`
 		BOOTIMG=`ls $BOOTFILEPATH | grep u-boot | grep .img | awk {'print $1'}`
+		APPBIN=`ls $BOOTFILEPATH | grep rtosdemo | grep .bin | awk {'print $1'}`
 		BOOTBIN=`ls $BOOTFILEPATH | grep u-boot | grep .bin | awk {'print $1'}`
-		BOOTUENV=`ls $BOOTFILEPATH | grep uEnv.txt | awk {'print $1'}`
+		BOOTUENV=`ls $BOOTFILEPATH | grep uEnv | awk {'print $1'}`
 	fi
 
 
@@ -1006,11 +1008,20 @@ if [ $BOOTPATHOPTION -eq 1 ] ; then
 	else
 		echo "No U-Boot file found"
 	fi
+	
+	if [ "$APPBIN" != "" ] ; then
+		cp $BOOTFILEPATH/$APPBIN $PATH_TO_SDBOOT/rtosdemo.bin
+		echo "rtosdemo.bin copied"
+	fi
 
 	echo ""
 
 	if [ "$BOOTUENV" != "" ] ; then
-		cp $BOOTFILEPATH/$BOOTUENV $PATH_TO_SDBOOT/uEnv.txt
+		if [ "$1" == "tftp" ] ; then
+			cp $BOOTFILEPATH/uEnv_tftp.txt $PATH_TO_SDBOOT/uEnv.txt
+		else
+			cp $BOOTFILEPATH/uEnv_mmc.txt $PATH_TO_SDBOOT/uEnv.txt
+		fi
 		echo "uEnv.txt copied"
 	fi
 

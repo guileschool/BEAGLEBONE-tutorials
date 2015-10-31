@@ -13,7 +13,7 @@ Sorry for my poor English and I hope you can understand me.
 ## 우분투 installer 이미지 다운로드후 설치
 [http://processors.wiki.ti.com/index.php/How_to_Build_a_Ubuntu_Linux_host_under_VMware#Using_the_Target_as_a_USB_Mass_Storage_Device](http://processors.wiki.ti.com/index.php/How_to_Build_a_Ubuntu_Linux_host_under_VMware#Using_the_Target_as_a_USB_Mass_Storage_Device)
 
-## 필수 패키지 설치하기 
+## 필수 패키지 설치하기( essential packages )
     $ sudo apt-get install build-essential subversion ccache sed wget cvs git-core coreutils unzip texinfo docbook-utils gawk help2man diffstat file g++ texi2html bison flex htmldoc chrpath libxext-dev xserver-xorg-dev doxygen corkscrew minicom vim xinetd tftp tftpd tree
     $ sudo apt-get install kpartx
     $ sudo apt-get install libsdl1.2-dev
@@ -21,6 +21,54 @@ Sorry for my poor English and I hope you can understand me.
 ## minicom 설치후 사용시 권한 오류및 대처
     $ sudo usermod -a -G dialout user   <----- 사용자 아이디가 'user' 라고 가정
 
+# 네트워크 설정(Network Configuration)
+## 네트워크 개념도
+디폴트 네트워크외에, USB 이더넷 어댑터를 이용하여 비글본 사용을 위한 또 하나의 네트워크를 추가 구성한다.
+<p align="center">
+  <img src="http://www.guileschool.com/image2/7432EDE3-F45A-43CE-88C7-A5A3A425A7EF.jpg
+" width=650 loop=infinite>
+</p>
+
+## Configuring a TFTP Server Run by xinetd
+
+     $ sudo mkdir /tftpboot
+     $ sudo chmod 777 /tftpboot
+
+/etc/xinetd.d 디렉토리내의 파일 tftp 을 다음과 같이 수정
+
+     $ sudo vim /etc/xinetd.d/tftp
+
+```
+#--------------------
+service tftp
+{
+    socket_type     = dgram
+    protocol        = udp
+    wait            = yes
+    user            = root
+    server          = /usr/sbin/in.tftpd
+    server_args     = -s /tftpboot
+    disable         = yes
+}
+#--------------------
+```
+
+## Configuring a MPTCP
+
+/etc/network/if-up.d/mptcp_up 파일을 수정
+
+     $ sudo vim /etc/network/if-up.d/mptcp_up
+
+```
+#--------------------
+#!/bin/sh
+GATEWAY=`ifconfig eth0 | grep "inet " | awk -F'[: ]+' '{ print $4 }' | sed -e 's;[0-9]*$;;'`
+while ip route del default; do :; done
+ip route add default via ${GATEWAY}1 metric 1000
+ip route list
+#--------------------
+```
+☞ eth0, eth1, eth2 ... 복수의 네트워크 장치를 사용할 때 만 필요함.
 
 # 컴파일러 설치하기( toolchain 설치 방법 )
 
@@ -124,7 +172,7 @@ BOOT SDCARD 만들기
 ###SD카드 포맷및 이미지 파일 복사
 ☞ 본문예에서 사용된 SD카드는 4G capacity임
 
-    $ cd ~/beaglebonetutorials/firmware/mkcard
+    $ cd ~/BEAGLEBONE-tutorials/BBB-firmware/mkcard
     $ sudo ./mkcard.sh
 
 ```

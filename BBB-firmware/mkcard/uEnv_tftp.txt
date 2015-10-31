@@ -1,0 +1,42 @@
+##Rename as: uEnv.txt to boot via nfs
+
+##https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt
+
+##SERVER: sudo apt-get install tftpd-hpa
+##SERVER: TFTP_DIRECTORY defined in /etc/default/tftpd-hpa
+##SERVER: zImage/*.dtb need to be located here:
+##SERVER: TFTP_DIRECTORY/zImage
+##SERVER: TFTP_DIRECTORY/dtbs/*.dtb
+
+##client_ip needs to be set for u-boot to try booting via nfs
+
+client_ip=192.168.0.3
+
+#u-boot defaults: uncomment and override where needed
+
+server_ip=192.168.0.2
+gw_ip=192.168.0.1
+netmask=255.255.255.0
+hostname=
+device=eth0
+autoconf=off
+#root_dir=/home/userid/targetNFS
+#nfs_options=,vers=3
+#nfsrootfstype=ext4 rootwait fixrtc
+
+### tftp settings
+loadaddr=0x80500000
+fdtaddr=0x80500000
+bootfile=rtosdemo.bin
+fdtfile=rtosdemo.bin
+
+console=ttyO0,115200n8
+ipaddr=192.168.0.3
+serverip=192.168.0.2
+#rootpath=/exports/rootfs
+#netargs=setenv bootargs console=${console} ${optargs} root=/dev/nfs nfsroot=${serverip}:${rootpath},${nfsopts} rw ip=${ipaddr}:${serverip}:192.168.0.2:255.255.255.0:beaglebone:eth0:none:192.168.0.2
+#netboot=echo Booting from network ...; tftp ${loadaddr} ${bootfile}; tftp ${fdtaddr} ${fdtfile}; run netargs; go ${loadaddr} - ${fdtaddr}
+netboot=echo Booting from network1 ...; tftp ${loadaddr} ${bootfile}; run netargs; go ${loadaddr}
+mmcboot=echo Booting from mmc ...; mmc init; fatload mmc 0 ${loadaddr} ${bootfile}; go ${loadaddr}
+
+uenvcmd=run netboot
