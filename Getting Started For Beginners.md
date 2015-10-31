@@ -25,8 +25,7 @@ Sorry for my poor English and I hope you can understand me.
 ## 네트워크 개념도
 디폴트 네트워크외에, USB 이더넷 어댑터를 이용하여 비글본 사용을 위한 또 하나의 네트워크를 추가 구성한다.
 <p align="center">
-  <img src="http://www.guileschool.com/image2/7432EDE3-F45A-43CE-88C7-A5A3A425A7EF.jpg
-" width=650 loop=infinite>
+  <img src="http://www.guileschool.com/image2/7432EDE3-F45A-43CE-88C7-A5A3A425A7EF.jpg" width=650 loop=infinite>
 </p>
 
 ## Configuring a TFTP Server Run by xinetd
