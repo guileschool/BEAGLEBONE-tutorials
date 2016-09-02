@@ -514,7 +514,7 @@ SIZE=`fdisk -l $DRIVE | grep Disk | awk '{print $5}'`
 
 echo DISK SIZE - $SIZE bytes  HEAD - $HEAD  SECTORS - $SECTORS
 
-CYLINDERS=`echo $SIZE/122/62/1 | bc`
+CYLINDERS=`echo $SIZE/$HEAD/$SECTORS/1 | bc`
 echo CYLINDERS - $CYLINDERS
 sfdisk -D -H $HEAD -S $SECTORS -C $CYLINDERS $DRIVE << EOF
 ,9,0x0C,*
