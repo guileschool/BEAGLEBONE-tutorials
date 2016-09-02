@@ -495,13 +495,28 @@ EOM
 
 dd if=/dev/zero of=$DRIVE bs=1024 count=1024
 
+fdisk $DRIVE <<EOF
+p
+d
+4
+d
+3
+d
+2
+d
+1
+w
+EOF
+
+HEAD=`fdisk -l $DRIVE | grep cylinders | awk '{print $1}'`
+SECTORS=`fdisk -l $DRIVE | grep cylinders | awk '{print $3}'`
 SIZE=`fdisk -l $DRIVE | grep Disk | awk '{print $5}'`
 
-echo DISK SIZE - $SIZE bytes
+echo DISK SIZE - $SIZE bytes  HEAD - $HEAD  SECTORS - $SECTORS
 
-CYLINDERS=`echo $SIZE/255/63/1 | bc`
+CYLINDERS=`echo $SIZE/122/62/1 | bc`
 echo CYLINDERS - $CYLINDERS
-sfdisk -D -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
+sfdisk -D -H 122 -S 62 -C $CYLINDERS $DRIVE << EOF
 ,9,0x0C,*
 10,90,,-
 100,,,-
@@ -554,15 +569,30 @@ cat << EOM
 EOM
 dd if=/dev/zero of=$DRIVE bs=1024 count=1024
 
+fdisk $DRIVE <<EOF
+p
+d
+4
+d
+3
+d
+2
+d
+1
+w
+EOF
+
+HEAD=`fdisk -l $DRIVE | grep cylinders | awk '{print $1}'`
+SECTORS=`fdisk -l $DRIVE | grep cylinders | awk '{print $3}'`
 SIZE=`fdisk -l $DRIVE | grep Disk | awk '{print $5}'`
 
-echo DISK SIZE - $SIZE bytes
+echo DISK SIZE - $SIZE bytes  HEAD - $HEAD  SECTORS - $SECTORS
 
-CYLINDERS=`echo $SIZE/255/63/512 | bc`
+CYLINDERS=`echo $SIZE/$HEAD/$SECTORS/512 | bc`
 
 echo CYLINDERS - $CYLINDERS
 
-sfdisk -D -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
+sfdisk -D -H $HEAD -S $SECTORS -C $CYLINDERS $DRIVE << EOF
 ,960,0x0C,*
 961,,,-
 EOF
