@@ -1,4 +1,4 @@
-U-BOOT 
+9U-BOOT 
 ===
 
 ##U-BOOT란?
@@ -6,7 +6,7 @@ U-Boot is a stage-2 bootloader. ( [A Handy U-Boot Trick - Linux Journal](http://
 
 ##U-BOOT 부팅 원리
 <p align="center">
-    <img src="http://www.guileschool.com/image2/09C2CAC0-D247-4688-8C1D-CFB532E5605E.jpg" width=650 loop=infinite>
+    <img src="http://d.pr/i/NwQa/4jXlFlqo+" width=650 loop=infinite>
 </p>
 
 ##비글본블랙 부팅 화면 캡쳐

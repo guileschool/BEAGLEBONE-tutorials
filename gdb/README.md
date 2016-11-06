@@ -64,7 +64,7 @@ $ cp openocd ~/openocd-bin
 [Flyswatter2](http://www.tincantools.com/JTAG/Flyswatter2.html)
 
 <p align="center">
-  <img src="http://www.guileschool.com/image2/C2C8276A-2B81-4AB6-9C5D-F14D7D7ADF04.jpg" width=650 loop=infinite>
+  <img src="http://d.pr/i/Vler/5b4RAq2D+" width=650 loop=infinite>
 </p>
 ## beaglebone black's openocd 설정파일 준비
 파일 다운로드
@@ -81,7 +81,7 @@ $ sudo ./openocd -f interface/flyswatter2.cfg -f board/ti_beaglebone_with_fs2.cf
 # gdb
 
 <p align="center">
-  <img src="http://www.guileschool.com/image2/E06DA3FA-220D-4B91-A34D-21212D194C06.jpg" width=650 loop=infinite>
+  <img src="http://d.pr/i/sTWO/1kwFXPFE+" width=650 loop=infinite>
 </p>
 
 ## Connecting to OpenOCD

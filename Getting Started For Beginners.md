@@ -25,7 +25,7 @@ Sorry for my poor English and I hope you can understand me.
 ## 네트워크 개념도
 디폴트 네트워크외에, USB 이더넷 어댑터를 이용하여 비글본 사용을 위한 또 하나의 네트워크를 추가 구성한다.
 <p align="center">
-  <img src="http://www.guileschool.com/image2/7432EDE3-F45A-43CE-88C7-A5A3A425A7EF.jpg" width=650 loop=infinite>
+  <img src="http://d.pr/i/Ijyc/5lU2wtIM+" width=650 loop=infinite>
 </p>
 
 ## Configuring a TFTP Server Run by xinetd
@@ -91,39 +91,19 @@ export PATH=/usr/local/arm-2011.03/bin:$PATH
 <td>
 <p align="center">
   <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/DD22B704-8756-4C4E-B950-F5D137EEA05F.jpg" width=450 loop=infinite>
+  <img src="http://d.pr/i/XVNx/3LV8DeKE+" width=450 loop=infinite>
 </p>
 </td>
 <td>
 <p align="center">
   <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/E1BF590A-0D99-4D55-A3AA-833BB57023E4.jpg" width=450 loop=infinite>
+  <img src="http://d.pr/i/tZua/2Gnx1h1m+" width=450 loop=infinite>
 </p>
 </td>
 <td>
 <p align="center">
   <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/15DC5D01-972C-47A2-9748-C79B56152089.jpg" width=450 loop=infinite>
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<p align="center">
-  <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/ACDC8DF1-C759-415E-93F5-358AFBF92FA6.jpg" width=450 loop=infinite>
-</p>
-</td>
-<td>
-<p align="center">
-  <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/2173EBB6-94ED-4BBD-AFE2-603BF24C6C8D.jpg" width=450 loop=infinite>
-</p>
-</td>
-<td>
-<p align="center">
-  <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/F28821D9-CB30-49B6-AD97-703F83DFFFB8.jpg" width=450 loop=infinite>
+  <img src="http://d.pr/i/WuOc/5NMw3Ojo+" width=450 loop=infinite>
 </p>
 </td>
 </tr>
@@ -131,13 +111,33 @@ export PATH=/usr/local/arm-2011.03/bin:$PATH
 <td>
 <p align="center">
   <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/3C48EEA9-E04E-43D7-97FC-3F2693C5B07A.jpg" width=450 loop=infinite>
+  <img src="http://d.pr/i/Q2Q2/61cd5aDc+" width=450 loop=infinite>
 </p>
 </td>
 <td>
 <p align="center">
   <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/11A05602-C078-44B3-8E86-E92EEF6F9DEF.jpg" width=450 loop=infinite>
+  <img src="http://d.pr/i/HhUL/4D0s9WzE+" width=450 loop=infinite>
+</p>
+</td>
+<td>
+<p align="center">
+  <p style="text-align: left"></p>
+  <img src="http://d.pr/i/9M8I/1hiiDThU+" width=450 loop=infinite>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="center">
+  <p style="text-align: left"></p>
+  <img src="http://d.pr/i/ZdC7/1sWwcAFE+" width=450 loop=infinite>
+</p>
+</td>
+<td>
+<p align="center">
+  <p style="text-align: left"></p>
+  <img src="http://d.pr/i/vvWI/IlSyyLRq+" width=450 loop=infinite>
 </p>
 </td>
 <td>
@@ -152,20 +152,20 @@ BOOT SDCARD 만들기
 ==============
 <p align="center">
   <p style="text-align: left"></p>
-  <img src="http://www.guileschool.com/image2/08276603-2FE3-46F5-987B-D7E02FE04495.jpg" width=450 loop=infinite>
+  <img src="http://d.pr/i/1iFBr/k3ds0f43+" width=450 loop=infinite>
 </p>
 
 
 ###4 ~ 8GB 용량의 SD카드를 준비한다
 <p align="center">
-    <img src="http://www.guileschool.com/image2/D1948DDD-CDFD-4976-B2E2-6981A43CCC51.jpg" width=1050 loop=infinite>
+    <img src="http://d.pr/i/mqo0/42C95Jtz+" width=1050 loop=infinite>
 </p>
 
 다양한 실험(활용)을 위하여 **펌웨어**, **리눅스(ARAGO)**, **리눅스(앵스트롬)**, **욕토프로젝트**, **안드로이드** 종류별로 총 **5개**의 메모리 카드를 준비하였다.
 
 ###SDCARD을 컴퓨터 슬롯에 넣는다
 <p align="center">
-  <img src="http://www.guileschool.com/image2/5656A8C2-90C7-446B-AEC7-F415785F944B.jpg" width=650 loop=infinite>
+  <img src="http://d.pr/i/LPkn/4ivoBQQN+" width=650 loop=infinite>
 </p>
 
 ###SD카드 포맷및 이미지 파일 복사
@@ -207,14 +207,14 @@ SD카드를 비글보드 SD슬롯에 넣고 boot 스위치를 누른채로
 전원을 넣고 부팅한다.  
 
 <p align="center">
-  <img src="http://www.guileschool.com/image2/BB6F3D79-4DD0-4478-80C5-00C4E23BC4BD.jpg" width=650 loop=infinite>
+  <img src="http://d.pr/i/JUBb/3lpP4nAQ+" width=650 loop=infinite>
 </p>
 
 ###전원을 끄는 방법
 파워버튼을 8초 이상 누른채로 있는다.
 
 <p align="center">
-    <img src="http://www.guileschool.com/image2/FE58A356-A464-4248-82F7-155B995FEB85.jpg" width=650 loop=infinite>
+    <img src="http://d.pr/i/JrtD/5DcBe8Tg+" width=650 loop=infinite>
 </p>
 
 처음사용자를 위한 eMMC 초기화 방법(Angstrom)
@@ -249,13 +249,13 @@ BBB-eMMC-flasher-2013.09.04.img
 - 테더링이 가능( PC에서는 크롬이나 파이어폭스를 사용해야 함 )
 
 <p align="center">
-    <img src="http://www.guileschool.com/image2/40578CCC-CB34-41B2-8885-3F5072371D80.jpg" width=650 loop=infinite>
+    <img src="http://d.pr/i/ENzC/fhX57KYS+" width=650 loop=infinite>
 </p>
 
 ##방법2.이더넷 케이블의 활용
 
 <p align="center">
-    <img src="http://www.guileschool.com/image2/94A928CC-5EC4-43E7-859C-57E62BBFA5D5.jpg" width=650 loop=infinite>
+    <img src="http://d.pr/i/VAwX/1tmsYgs7+" width=650 loop=infinite>
 </p>
 
 
@@ -273,11 +273,11 @@ BBB-eMMC-flasher-2013.09.04.img
 확장커넥터 핀정의
 ===
 <p align="center">
-    <img src="http://www.guileschool.com/image2/5A3F3F3F-3C61-4D15-BA56-718D0177A0A1.jpg" width=1000 loop=infinite>
+    <img src="http://d.pr/i/8MtP/6PIbSPVs+" width=1000 loop=infinite>
 </p>
 
 <p align="center">
-    <img src="http://www.guileschool.com/image2/B89A3EF0-BCFB-4CEC-B945-067B289F313F.jpg" width=1700 loop=infinite>
+    <img src="http://d.pr/i/YOUM/3EaIIaNe+" width=1700 loop=infinite>
 </p>
 
 ##부팅과정
@@ -289,7 +289,7 @@ RAM) -> Linux system.
 )
 
 <p align="center">
-    <img src="http://www.guileschool.com/image2/081ED1F3-1383-41AD-94BF-F3AC00B40C71.jpg" width=1200 loop=infinite>
+    <img src="http://d.pr/i/qDhJ/3l2pSKq4+" width=1200 loop=infinite>
 </p>
 
 [http://diydrones.com/profiles/blogs/booting-up-a-beaglebone-black](http://diydrones.com/profiles/blogs/booting-up-a-beaglebone-black)
